@@ -21,7 +21,7 @@ def load_pdfs_from_folder(folder_path):
     return documents
 
 # Folder path containing the PDF files
-pdf_folder_path = "../documents"
+pdf_folder_path = "documents"
 documents = load_pdfs_from_folder(pdf_folder_path)
 
 text_splitter = RecursiveCharacterTextSplitter(chunk_size=200, chunk_overlap=20)
