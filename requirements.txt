@@ -4,3 +4,5 @@ faiss-cpu
 pyPDF
 huggingface_hub
 sentence_transformers
+flask
+pygments

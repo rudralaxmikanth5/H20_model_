@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document Retrieval QA</title>
+</head>
+<body>
+    <h1>Document Retrieval Question Answering</h1>
+    <form action="/" method="post">
+        <label for="prompt">Ask your question:</label>
+        <input type="text" id="prompt" name="prompt" required>
+        <input type="submit" value="Submit">
+    </form>
+
+    {% if response %}
+    <h2>Answer:</h2>
+    {% for item in response %}
+        {% if item.code %}
+        <pre>{{ item.text }}</pre>
+        {% else %}
+        <p>{{ item.text }}</p>
+        {% endif %}
+    {% endfor %}
+    {% endif %}
+
+    <style>
+        /* Add your custom CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+        }
+        input[type="submit"] {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        pre {
+            background-color: #f7f7f7;
+            padding: 10px;
+            border: 1px solid #ddd;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            margin: 10px 0;
+        }
+        p {
+            margin: 10px 0;
+        }
+    </style>
+</body>
+</html>

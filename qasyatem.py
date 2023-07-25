@@ -1,3 +1,4 @@
+
 import os
 from langchain.embeddings import HuggingFaceEmbeddings
 from langchain import HuggingFaceHub
@@ -28,18 +29,3 @@ class DocumentRetrievalQA:
     def ask_question(self, question):
         result = self.qa({"query": question})
         return result
-
-# Example usage:
-if __name__ == "__main__":
-    pdf_folder_path = "documents"
-    huggingface_token = "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"
-    model_repo_id = "google/flan-t5-large"
-
-    qa_system = DocumentRetrievalQA(pdf_folder_path, huggingface_token, model_repo_id)
-
-    while True:
-        query = input("Enter your question (type 'exit' to quit): ")
-        if query.lower() == "exit":
-            break
-        result = qa_system.ask_question(query)
-        print(result)
