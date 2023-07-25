@@ -38,4 +38,4 @@ while True:
     if query.lower() == "exit":
         break
     result = qa({"query": query})
-    print(result["answer"])
+    print(result)
