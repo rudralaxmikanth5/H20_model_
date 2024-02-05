@@ -32,7 +32,7 @@ class DocumentRetrievalQA:
 # Example usage:
 if __name__ == "__main__":
     pdf_folder_path = "documents"
-    huggingface_token = "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"
+    huggingface_token = "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"
     model_repo_id = "google/flan-t5-large"
 
     qa_system = DocumentRetrievalQA(pdf_folder_path, huggingface_token, model_repo_id)

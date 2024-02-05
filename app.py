@@ -10,7 +10,7 @@ app = Flask(__name__)
 style = 'friendly'
 
 pdf_folder_path = "documents"
-huggingface_token = "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"
+huggingface_token = "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"
 model_repo_id = "google/flan-t5-large"
 
 qa_system = DocumentRetrievalQA(pdf_folder_path, huggingface_token, model_repo_id)
@@ -24,7 +24,7 @@ def completion():
     highlighter_style = HtmlFormatter(style=style).get_style_defs('.highlight')
     prompt = request.form["prompt"]
     response = qa_system.ask_question(prompt)
-    result = response.get('result', '')  # Extract the 'result' key from the response
+    result = response.get('result', '')  
     return render_template("./index.html", response=result, highlighter_style=highlighter_style)
 
 
